@@ -1,0 +1,1008 @@
+* {
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --bg-color: rgb(248, 248, 248);
+    --main-color: rgb(57, 133, 255);
+    --logo-color: rgb(0, 2, 71);
+    --text-color: white;
+    --secondary-text-color: black;
+    --sold-color: #cfcfcf;
+    --seat-color: #444451;
+    --selected-color: green;
+    --red: rgb(255, 71, 71);
+}
+
+.darkMode{
+    --bg-color: rgb(8, 8, 8);
+    --main-color: rgb(0, 2, 71);
+    --logo-color: rgb(57, 133, 255);
+    --text-color: white;
+    --secondary-text-color: white;
+    --sold-color: white;
+    --seat-color: #444451;
+    --selected-color: green;
+    --red: rgb(255, 71, 71);
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--secondary-text-color);
+}
+
+.navbar{
+    width: 100%;
+    height: 50px;
+    background-color: var(--main-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbarContainer{
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    height: 100%;
+    color: var(--text-color);
+    font-family: "Sen", sans-serif;
+}
+
+.logoContainer{
+    flex: 1;
+}
+
+.logo{
+    font-size: 1.875rem;
+    color: var(--logo-color);
+    width: 200px;
+    cursor: pointer;
+}
+
+.menuIconContainer{
+    display: none;
+    width: 66%;
+    text-align: right;
+    margin-right: 15px;
+}
+
+#MenuIcon{
+    font-size: 42px;
+    color: var(--text-color);
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+
+.menuContainer{
+    flex: 6;
+}
+
+.menuList{
+    display: flex;
+    list-style: none;
+}
+
+.menuItem{
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.menuItem .menuActive{
+    font-weight: bold;
+}
+
+.profileContainer{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.profileTextContainer{
+    margin: 0 20px;
+}
+
+.profilePicture{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.darkButton{
+    background-color: var(--logo-color);
+    flex: 0.5;
+    align-items: center;
+    justify-content: flex-end;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.darkButton img{
+    width: 25px;
+    margin-top: 7.5px;
+    margin-left: 35px;
+    margin-right: 35px;
+    align-items: center;
+}
+
+.container{
+    background-color: var(--bg-color);
+    min-height: calc(100vh - 50px);
+    color: var(--secondary-text-color);
+    font-family: "Sen", sans-serif;
+}
+
+.featuredContainer{
+    background-image: url("Media/loki.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-bottom: 35px;
+}
+
+.featuredContent{
+    height: 50vh;
+    padding: 50px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #151515);
+}
+
+.featuredTitle{
+    width: 260px;
+    margin-left: 7%;
+}
+
+.featuredDesc{
+    width: 450px;
+    color: lightgray;
+    margin: 15px 0;
+    text-align: justify;
+    font-family: "Sen";
+    margin-bottom: 20px;
+}
+
+.featuredButton{
+    background-color: var(--main-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    margin-left: 13.75%;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.featuredButton:hover{
+    transform: scale(1.1);
+    background-color: rgb(0, 2, 71);
+}
+
+.darkMode .featuredButton:hover{
+    background-color: rgb(57, 133, 255);
+}
+
+.movieListContainer{
+    padding: 0 20px;
+}
+
+.movieListTitle{
+    margin-left: 30px;
+}
+
+.movieListWrapper{
+    position: relative;
+    overflow: hidden;
+}
+
+.movieList{
+    display: flex;
+    align-items: center;
+    height: 400px;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+}
+
+.movieListItem{
+    margin-top: -45px;
+    margin-right: 30px;
+    position: relative;
+    cursor: pointer;
+    align-items: center;
+    text-align: left;
+}
+
+.movieListItem:hover .movieListItemImg{
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.3;
+}
+
+.movieListItem:hover .movieListItemTitle,
+.movieListItem:hover .movieListItemButton{
+    opacity: 1;
+}
+
+.movieListItemImg{
+    transition: all 0.6s ease-in-out;
+    width: 190px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.movieListItemTitle{
+    display: none;
+}
+
+.movieListItemButton{
+    padding: 10px;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 85px;
+    opacity: 0;
+    transition: 0.4s all ease-in-out;
+}
+
+.arrow{
+    font-size: 100px;
+    position: absolute;
+    top: 120px;
+    right: 0;
+    color: lightgray;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.footer{
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-family: "Sen", sans-serif;
+}
+
+.footerText{
+    padding: 10px 0px 10px 20px;
+}
+
+.footerText a{
+    color: var(--text-color);
+}
+
+.heart{
+    color: var(--red);
+}
+
+.seatMain{
+    background-color: var(--bg-color);
+    color: var(--secondary-text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: "Sen", sans-serif;
+    margin: 0;
+    margin-top: 12px;
+}
+
+.movieNameArea{
+    margin: 20px 0;
+}
+
+.showcase{
+    padding: 0 5px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.showcase .seat:not(.sold):hover{
+    cursor: default;
+    transform: scale(1);
+}
+
+.showcase li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.showcase li small{
+    margin-left: 2px;
+}
+
+.screen{
+    background-color: var(--sold-color);
+    height: 120px;
+    width: 100%;
+    margin: 15px 0;
+    transform: rotateX(-48deg);
+    box-shadow: 0 3px 10px var(--sold-color);
+}
+
+.seatContainer{
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+
+.row{
+    display: flex;
+}
+
+.seat{
+    background-color: var(--seat-color);
+    height: 26px;
+    width: 32px;
+    margin: 3px;
+    font-size: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.seat.selected{
+    background-color: var(--selected-color);
+}
+
+.seat.sold{
+    background-color: var(--sold-color);
+}
+
+.seat:nth-of-type(2){
+    margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2){
+    margin-left: 18px;
+}
+
+.seat:not(.sold):hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.seatText{
+    margin: 5px 0;
+}
+
+.seatText span{
+    color: var(--selected-color);
+}
+
+.nextBtn{
+    position: absolute;
+    background-color: var(--logo-color);
+    color: var(--text-color);
+    font-size: 18px;
+    padding: 10px 12px 10px 12px;
+    border-radius: 25px;
+    width: auto;
+    font-family: "Sen", sans-serif;
+    margin-top: -3.5%;
+    margin-left: 88.5%;
+    display: none;
+    cursor: pointer;
+}
+
+.backBtn{
+    position: absolute;
+    background-color: rgb(145, 145, 145);
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: -380px;
+    margin-left: 20px;
+}
+
+.paymentMain{
+    background-color: var(--bg-color);
+    color: var(--secondary-text-color);
+    font-family: "Sen", sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.qrCode{
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    margin-top: 7.5%;
+}
+
+.qrImg{
+    width: 320px;
+    height: auto;
+}
+
+.paymentDetails{
+    width: auto;
+    height: auto;
+    align-items: center;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.summary{
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.summaryHead{
+    margin-right: 300px;
+}
+
+.summaryValue{
+    align-items: right;
+    text-align: left;
+}
+
+.gt{
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+.paymentBtn{
+    background-color: var(--logo-color);
+    color: var(--text-color);
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+    margin-left: 150px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.thanks{
+    background-color: var(--bg-color);
+    font-family: "Sen", sans-serif;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+    overflow: hidden;
+}
+
+.thanks img{
+    height: auto;
+    width: 80%;
+    margin-top: 5%;
+}
+
+.thanksBtn{
+    background-color: var(--logo-color);
+    color: var(--text-color);
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: auto;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width:1200px){
+    .featuredTitle{
+        margin-left: 6%;
+    }
+    .featuredDesc{
+        width: 400px;
+        margin-bottom: 30px;
+    }
+    .featuredButton{
+        margin-left: 12.6%;
+    }
+}
+
+@media (max-width:1050px){
+    .menuIconContainer{
+        display: block;
+    }
+    #MenuIcon{
+        display: block;
+    }
+    .menuList{
+        position: absolute;
+        top: -800px;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--main-color);
+        padding: 20px 0px 20px 20px;
+        text-align: left;
+        transition: all .5s ease;
+    }
+    .profileContainer{
+        display: none;
+    }
+    .menuList li{
+        display: block;
+        font-size: 22px;
+        padding: 12px 0s;
+    }
+    .menuList.open{
+        top: 100%;
+    }
+    .featuredDesc{
+        width: 350px;
+    }
+    .featuredTitle{
+        margin-left: 5%;
+    }
+    .nextBtn{
+        margin-left: 85%;
+    }
+    .backBtn{
+        font-size: 15px;
+        margin-top: -350px;
+    }
+    .qrImg{
+        width: 300px;
+        height: auto;
+    }
+    .paymentDetails{
+        margin-top: 18px;
+    }
+    .summaryHead{
+        margin-right: 250px;
+    }
+    .paymentBtn{
+        padding: 8px 12px 8px 12px;
+        margin-left: 130px;
+        font-size: 15px;
+    }
+    .thanks img{
+        margin-top: 10%;
+    }
+}
+
+@media (max-width:900px){
+    .featuredDesc{
+        width: 300px;
+    }
+    .featuredTitle{
+        margin-left: 3%;
+    }
+    .featuredButton{
+        margin-left: 12%;
+    }
+    .nextBtn{
+        font-size: 15px;
+    }
+    .backBtn{
+        margin-top: -310px;
+    }
+    .qrCode{
+        font-size: 15px;
+    }
+    .qrImg{
+        width: 270px;
+        height: auto;
+    }
+    .paymentDetails{
+        margin-top: 28px;
+        font-size: 15px;
+    }
+    .summaryHead{
+        margin-right: 200px;
+    }
+    .paymentBtn{
+        margin-left: 120px;
+        font-size: 12px;
+    }
+    .thanks img{
+        margin-top: 15%;
+    }
+}
+
+@media (max-width:800px){
+    .featuredDesc{
+        display: none;
+    }
+    .featuredTitle{
+        margin-top: 55px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+    }
+    .featuredButton{
+        margin-left: 78px;
+    }
+    .thanks img{
+        width: 90%;
+        margin-top: 20%;
+    }
+}
+
+@media (max-width:775px){
+    .featuredContainer{
+        height: 260px;
+    }
+    .featuredContent{
+        height: 160px;
+    }
+    .featuredTitle{
+        width: 200px;
+        margin-top: 0px;
+    }
+    .featuredButton{
+        margin-left: 50px;
+    }
+    .nextBtn{
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width:768px){
+    .movieListContainer{
+        margin-bottom: -30px;
+    }
+    .movieList{
+        height: 300px;
+    }
+    .movieListItem{
+        margin-right: 20px;
+    }
+    .movieListItemImg{
+        width: 125px;
+        height: 200px;
+    }
+    .arrow{
+        top: 90px;
+        font-size: 70px;
+    }
+    .movieListItemButton{
+        left: 53px;
+    }
+    .footer{
+        font-size: 10px;
+    }
+    .backBtn{
+        margin-top: -10px;
+    }
+    .paymentMain{
+        display: block;
+        align-items: center;
+        justify-items: center;
+        margin-top: -30px;
+    }
+    .qrCode{
+        font-size: 12px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .qrImg{
+        width: 250px;
+        height: auto;
+    }
+    .paymentDetails{
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        text-align: center;
+        font-size: 12px;
+    }
+    .summary{
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        text-align: left;
+        margin-bottom: 50px;
+    }
+    .summaryHead{
+        margin-left: auto;
+        margin-right: 200px;
+    }
+    .summaryValue{
+        margin-right: auto;
+    }
+    .paymentBtn{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width:700px){
+    .navbarContainer{
+        padding: 0 30px;
+    }
+    .nextBtn{
+        font-size: 10px;
+        margin-top: 3%;
+        margin-left: 48%;
+    }
+    .paymentMain{
+        margin-top: -20px;
+    }
+    .thanks img{
+        margin-top: 25%;
+    }
+}
+
+@media (max-width:650px){
+    .featuredTitle{
+        margin-left: -15px;
+    }
+    .featuredButton{
+        margin-left: 30px;
+    }
+    .paymentMain{
+        margin-top: -10px;
+    }
+    .thanksBtn{
+        font-size: 15px;
+    }
+    .thanks img{
+        margin-top: 30%;
+    }
+}
+
+@media (max-width:550px){
+    .featuredTitle{
+        width: 150px;
+        margin-left: -15px;
+    }
+    .featuredButton{
+        margin-left: 4px;
+    }
+    .movieNameArea{
+        font-size: 15px;
+    }
+    .thanks img{
+        width: 100%;
+    }
+    .thanksBtn{
+        font-size: 12px;
+        padding: 8px 12px;
+        border-radius: 16px;
+    }
+}
+
+@media (max-width:500px){
+    .navbarContainer{
+        padding: 0 20px;
+    }
+    .featuredContainer{
+        height: 195px;
+    }
+    .featuredContent{
+        height: 95px;
+    }
+    .featuredTitle{
+        width: 130px;
+        margin-left: -15px;
+        margin-top: -10px;
+    }
+    .featuredButton{
+        margin-left: 7px;
+        padding: 8px 16px;
+        font-size: 0.625rem;
+    }
+    .movieNameArea{
+        font-size: 12px;
+    }
+    .showcase li small{
+        font-size: 12px;
+    }
+    .screen{
+        height: 105px;
+        width: 85%;
+        margin: 15px 7.5%;
+    }
+    .seat{
+        height: 21px;
+        width: 27px;
+        margin: 2px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    .seatText{
+        font-size: 15px;
+    }
+    .nextBtn{
+        font-size: 10px;
+        padding: 6px 8px;
+        margin-left: 46%;
+    }
+    .paymentMain{
+        margin-top: 0px;
+    }
+    .backBtn{
+        display: none;
+    }
+    .qrImg{
+        width: 200px;
+        height: auto;
+    }
+    .paymentDetails{
+        margin-top: 10px;
+    }
+    .summary{
+        margin-top: 25px;
+    }
+    .thanks img{
+        margin-top: 40%;
+    }
+}
+
+@media (max-width:425px){
+    .movieListContainer{
+        margin-bottom: -50px;
+    }
+    .movieListTitle{
+        font-size: 22px;
+        margin-left: 10px;
+    }
+    .movieList{
+        height: 242px;
+    }
+    .movieListItem{
+        margin-right: 10px;
+        margin-top: -65px;
+    }
+    .movieListItemImg{
+        width: 90px;
+        height: 142px;
+        border-radius: 10px;
+    }
+    .arrow{
+        top: 70px;
+        font-size: 40px;
+    }
+    .movieListItemButton{
+        left: 35px;
+    }
+    .footer{
+        margin-top: 30px;
+        font-size: 8px;
+    }
+    .footerText{
+        padding: 5px 0px 5px 10px;
+    }
+    .movieNameArea{
+        font-size: 10px;
+    }
+    .showcase li small{
+        font-size: 10px;
+    }
+    .screen{
+        height: 95px;
+        width: 80%;
+        margin: 15px 10%;
+    }
+    .seat{
+        height: 17px;
+        width: 23px;
+    }
+    .seatText{
+        font-size: 12px;
+    }
+    .nextBtn{
+        font-size: 8px;
+        padding: 6px 8px;
+        margin-left: 45.5%;
+    }
+    .thanks img{
+        margin-top: 50%;
+    }
+}
+
+@media (max-width:400px){
+    .navbarContainer{
+        padding: 0 15px;
+    }
+    .logo{
+        font-size: 1.563rem;
+    }
+    .menuIconContainer{
+        margin-right: 10px;
+    }
+    .featuredContainer{
+        height: 130px;
+    }
+    .featuredContent{
+        height: 30px;
+    }
+    .featuredTitle{
+        width: 110px;
+        margin-left: -25px;
+        margin-top: -30px;
+    }
+    .featuredButton{
+        margin-left: -2px;
+        padding: 5px 10px;
+        font-size: 0.5rem;
+    }
+    .extraP{
+        margin-bottom: -5px;
+    }
+    .qrCode{
+        font-size: 10px;
+    }
+    .qrImg{
+        width: 150px;
+    }
+    .paymentDetails{
+        font-size: 10px;
+        margin-top: 20px;
+    }
+    .summary{
+        margin-bottom: 40px;
+        margin-top: 20px;
+    }
+    .summaryHead{
+        margin-right: 150px;
+    }
+    .thanks img{
+        margin-top: 55%;
+    }
+}
+
+@media (max-width:375px){
+    .darkButton img{
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .logo{
+        width: 150px;
+    }
+    .summaryHead{
+        margin-right: 130px;
+    }
+    .thanksBtn{
+        font-size: 10px;
+    }
+    .thanks img{
+        margin-top: 60%;
+    }
+}
+
+@media (max-width:335px){
+    .featuredTitle{
+        margin-left: -35px;
+    }
+    .featuredButton{
+        margin-left: -12px;
+    }
+    .movieNameArea{
+        font-size: 8px;
+    }
+    .summaryHead{
+        margin-right: 110px;
+    }
+    .qrCode{
+        font-size: 8px;
+    }
+    .paymentDetails{
+        font-size: 8px;
+        margin-top: 25px;
+    }
+    .summary{
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    .paymentBtn{
+        font-size: 8px;
+    }
+    .thanks img{
+        margin-top: 70%;
+    }
+}

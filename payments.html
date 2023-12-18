@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie Book | Pay Now</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="navbarContainer">
+                <div class="logoContainer">
+                    <h1 class="logo" onclick="window.location.href='index.html'">Movie Book</h1>
+                </div>
+                <div class="menuIconContainer">
+                    <div class="bx bx-menu" id="MenuIcon"></div>
+                </div>
+                <div class="menuContainer">
+                    <ul class="menuList">
+                        <li class="menuItem menuActive" onclick="window.location.href='index.html'">Home</li>
+                        <li class="menuItem" onclick="window.location.href='index.html#movie'">Movies</li>
+                        <li class="menuItem">Theatre</li>
+                        <li class="menuItem" onclick="window.location.href='index.html#pop'">Popular</li>
+                        <li class="menuItem">Offers</li>
+                    </ul>
+                </div>
+                <div class="profileContainer">
+                    <img class="profilePicture" src="Media/user.png">
+                    <div class="profileTextContainer">
+                        <span class="profileText">Profile</span>
+                        <div class="fas fa-caret-down"></div>
+                    </div>
+                </div>
+                <div class="darkButton" id="btn">
+                    <img src="https://www.freeiconspng.com/uploads/moon-icon-32.png" id="btnImg">
+                </div>
+            </div>
+        </div>
+
+        <div class="paymentMain">
+            <span class="backBtn" onclick="history.back()">< Back</span>
+            <div class="qrCode">
+                <h1>Scan this to pay</h1>
+                <img class="qrImg" src="Media/qrBlack.png">
+            </div>
+            <div class="paymentDetails">
+                <h1>Order Summary</h1>
+                <div class="summary">
+                    <div class="summaryHead">
+                        <p>Total</p>
+                        <p>Discount (10%)</p>
+                        <p>Taxes & Charges</p>
+                        <b><p class="gt">Grand Total</p></b>
+                    </div>
+                    <div class="summaryValue">
+                        <p id="total">₹0.00</p>
+                        <p id="disc">₹0.00</p>
+                        <p id="tax">₹0.00</p>
+                        <b><p class="gt" id="gt">₹0.00</p></b>
+                    </div>
+                </div>
+                <span class="paymentBtn" onclick="window.location.href='thanks.html'">Confirm Payment</span>
+            </div>
+        </div>
+
+        <script src="payments.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

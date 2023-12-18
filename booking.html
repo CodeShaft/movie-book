@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="bookingTitle"></title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="navbarContainer">
+                <div class="logoContainer">
+                    <h1 class="logo" onclick="window.location.href='index.html'">Movie Book</h1>
+                </div>
+                <div class="menuIconContainer">
+                    <div class="bx bx-menu" id="MenuIcon"></div>
+                </div>
+                <div class="menuContainer">
+                    <ul class="menuList">
+                        <li class="menuItem menuActive" onclick="window.location.href='index.html'">Home</li>
+                        <li class="menuItem" onclick="window.location.href='index.html#movie'">Movies</li>
+                        <li class="menuItem">Theatre</li>
+                        <li class="menuItem" onclick="window.location.href='index.html#pop'">Popular</li>
+                        <li class="menuItem">Offers</li>
+                    </ul>
+                </div>
+                <div class="profileContainer">
+                    <img class="profilePicture" src="Media/user.png">
+                    <div class="profileTextContainer">
+                        <span class="profileText">Profile</span>
+                        <div class="fas fa-caret-down"></div>
+                    </div>
+                </div>
+                <div class="darkButton" id="btn">
+                    <img src="https://www.freeiconspng.com/uploads/moon-icon-32.png" id="btnImg">
+                </div>
+            </div>
+        </div>
+
+        <div class="seatMain">
+            <div class="movieNameArea">
+                <h1 id="nameMovie"></h1>
+            </div>
+
+            <ul class="showcase">
+                <li>
+                    <div class="seat"></div>
+                    <small>Available</small>
+                </li>
+                <li>
+                    <div class="seat selected"></div>
+                    <small>Selected</small>
+                </li>
+                <li>
+                    <div class="seat sold"></div>
+                    <small>Sold</small>
+                </li>
+            </ul>
+            
+            <div class="seatContainer">
+                <div class="screen"></div>
+                <div class="row">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                </div>
+        
+                <div class="row">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat sold"></div>
+                    <div class="seat sold"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                </div>
+
+                <div class="row">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat sold"></div>
+                    <div class="seat sold"></div>
+                </div>
+
+                <div class="row">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                </div>
+
+                <div class="row">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat sold"></div>
+                    <div class="seat sold"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                </div>
+
+                <div class="row">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat sold"></div>
+                    <div class="seat sold"></div>
+                    <div class="seat sold"></div>
+                    <div class="seat"></div>
+                </div>
+            </div>
+
+            <p class="seatText">You have selected 
+                <span id="seatCount">0</span> 
+                seat(s) for a price of ₹<span id="seatTotal">0</span>
+            </p>
+        </div>
+        <span class="nextBtn" id="btnNext"></span>
+
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie Book</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="navbarContainer">
+                <div class="logoContainer">
+                    <h1 class="logo" onclick="window.location.href='index.html'">Movie Book</h1>
+                </div>
+                <div class="menuIconContainer">
+                    <div class="bx bx-menu" id="MenuIcon"></div>
+                </div>
+                <div class="menuContainer">
+                    <ul class="menuList">
+                        <li class="menuItem menuActive" onclick="window.location.href='index.html'">Home</li>
+                        <li class="menuItem" onclick="window.location.href='#movie'">Movies</li>
+                        <li class="menuItem">Theatre</li>
+                        <li class="menuItem" onclick="window.location.href='#pop'">Popular</li>
+                        <li class="menuItem">Offers</li>
+                    </ul>
+                </div>
+                <div class="profileContainer">
+                    <img class="profilePicture" src="Media/user.png">
+                    <div class="profileTextContainer">
+                        <span class="profileText">Profile</span>
+                        <div class="fas fa-caret-down"></div>
+                    </div>
+                </div>
+                <div class="darkButton" id="btn">
+                    <img src="https://www.freeiconspng.com/uploads/moon-icon-32.png" id="btnImg">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="featuredContainer">
+                <div class="featuredContent">
+                    <img class="featuredTitle" src="Media/loki2.png">
+                    <p class="movieListItemTitle">Loki S2</p>
+                    <p class="featuredDesc">After stealing the Tesseract, Loki comes into contact with a 
+                        mysterious organization that gives him an ominous ultimatum, either fix the timeline 
+                        or cease to exist completely.</p><p class="extraP"></p>
+                    <button class="featuredButton" onclick="goToBooking('LOKI S2')">BOOK NOW</button>
+                </div>
+            </div>
+            <div class="movieListContainer" id="movie">
+                <h1 class="movieListTitle">LATEST RELEASES</h1>
+                <div class="movieListWrapper">
+                    <div class="movieList">
+                        <div class="movieListItem" onclick="goToBooking('KILLERS OF THE FLOWER MOON')">
+                            <img class="movieListItemImg" src="Media/kotfm.jpg">
+                            <span class="movieListItemTitle">KILLERS OF THE FLOWER MOON</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem" onclick="goToBooking('THE MARVELS')">
+                            <img class="movieListItemImg" src="Media/marvels.jpg">
+                            <span class="movieListItemTitle">THE MARVELS</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem" onclick="goToBooking('OPPENHEIMER')">
+                            <img class="movieListItemImg" src="Media/oppenheimer.jpg">
+                            <span class="movieListItemTitle">OPPENHEIMER</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem" onclick="goToBooking('INDIANA JONES: DIAL OF DESTINY')">
+                            <img class="movieListItemImg" src="Media/indiana jones.jpg">
+                            <span class="movieListItemTitle">INDIANA JONES: DIAL OF DESTINY</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem" onclick="goToBooking('A HAUNTING IN VENICE')">
+                            <img class="movieListItemImg" src="Media/hercule.jpeg">
+                            <span class="movieListItemTitle">A HAUNTING IN VENICE</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem" onclick="goToBooking('WEREWOLF BY NIGHT')">
+                            <img class="movieListItemImg" src="Media/werewolf.jpg">
+                            <span class="movieListItemTitle">WEREWOLF BY NIGHT</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem" onclick="goToBooking('FIVE NIGHTS AT FREDDYS')">
+                            <img class="movieListItemImg" src="Media/fnaf.jpg">
+                            <span class="movieListItemTitle">FIVE NIGHTS AT FREDDYS</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem" onclick="goToBooking('DUNE 2')">
+                            <img class="movieListItemImg" src="Media/dune.jpg">
+                            <span class="movieListItemTitle">DUNE 2</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="fas fa-chevron-right arrow"></div>
+                </div>
+            </div>
+            <div class="movieListContainer" id="pop">
+                <h1 class="movieListTitle">TRENDING NOW</h1>
+                <div class="movieListWrapper">
+                    <div class="movieList">
+                        <div class="movieListItem" onclick="goToBooking('SPIDERMAN: ACROSS THE SPIDERVERSE')">
+                            <img class="movieListItemImg" src="Media/spiderman.jpg">
+                            <span class="movieListItemTitle">SPIDERMAN: ACROSS THE SPIDERVERSE</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem"  onclick="goToBooking('GUARDIANS OF THE GALAXY: VOL 3')">
+                            <img class="movieListItemImg" src="Media/gotg3.jpg">
+                            <span class="movieListItemTitle">GUARDIANS OF THE GALAXY: VOL 3</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem" onclick="goToBooking('MISSION IMPOSSIBLE: DEAD RECKONING PART 1')">
+                            <img class="movieListItemImg" src="Media/mi.jpg">
+                            <span class="movieListItemTitle">MISSION IMPOSSIBLE: DEAD RECKONING PART 1</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem" onclick="goToBooking('TRANSFORMERS: RISE OF THE BEASTS')">
+                            <img class="movieListItemImg" src="Media/transformers.jpg">
+                            <span class="movieListItemTitle">TRANSFORMERS: RISE OF THE BEASTS</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem" onclick="goToBooking('AIR')">
+                            <img class="movieListItemImg" src="Media/air.jpg">
+                            <span class="movieListItemTitle">AIR</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem" onclick="goToBooking('ANT-MAN AND THE WASP: QUANTUMANIA')">
+                            <img class="movieListItemImg" src="Media/antman.jpg">
+                            <span class="movieListItemTitle">ANT-MAN AND THE WASP: QUANTUMANIA</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem" onclick="goToBooking('GHOSTED')">
+                            <img class="movieListItemImg" src="Media/ghosted.jpg">
+                            <span class="movieListItemTitle">GHOSTED</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                        <div class="movieListItem" onclick="goToBooking('BLUE BETTLE')">
+                            <img class="movieListItemImg" src="Media/blue bettle.jpg">
+                            <span class="movieListItemTitle">BLUE BETTLE</span>
+                            <button class="movieListItemButton">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="fas fa-chevron-right arrow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p class="footerText">Made with <span class="heart">&#10084;</span> by <a href="https://github.com/CodeShaft" target="_blank">CodeShaft</a>. Design & Dev Copyright &copy; 2023 <a href="https://github.com/CodeShaft" target="_blank">CodeShaft</a>.</p>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
